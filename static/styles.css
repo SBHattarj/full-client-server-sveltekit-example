@@ -1,0 +1,25 @@
+
+body {
+    background-color: rgb(31, 37, 37);
+    color: white;
+}
+a {
+    color: rgb(211, 47, 64);
+    text-decoration: none;
+}
+
+button, .btn {
+    background-color: rgb(60, 59, 64);
+    border: none;
+    padding: 1em;
+    color: white;
+    border-radius: 1em;
+    margin: 1em;
+
+}
+.crd {
+    background-color: rgb(66, 68, 62);
+    border-radius: 1em;
+    padding: 1em;
+    margin: .5em;
+}

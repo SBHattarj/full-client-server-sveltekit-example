@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1689765064099,
+      "tag": "0000_perfect_pestilence",
+      "breakpoints": false
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1689851965763,
+      "tag": "0001_legal_hitman",
+      "breakpoints": true
+    }
+  ]
+}
