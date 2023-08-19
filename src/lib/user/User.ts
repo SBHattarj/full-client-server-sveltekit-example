@@ -5,7 +5,6 @@ import { db, dbEvent } from "server:/lib/db";
 import { desc, eq } from "server:npm:drizzle-orm";
 import { UserModel, publicUserFields } from "server:/lib/db/shema/User";
 import { PostModel } from "server:/lib/db/shema/Posts";
-
 export function getAllUsers(limit: number, offset: number) {
     return node(async () => {
         return await db.select(publicUserFields).from(UserModel).orderBy(desc(UserModel.id)).limit(limit).offset(offset)

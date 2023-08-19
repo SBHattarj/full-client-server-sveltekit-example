@@ -1,4 +1,5 @@
 <script lang="ts">
+    console.log("hello")
     import { offPostChange, onPostAdded, offPostAdded} from "$lib"
     import { onMount } from "svelte";
     import { getCookieStore } from "$lib/cookie"
@@ -27,9 +28,11 @@
             data.myPosts = [postAdded, ...data.myPosts]
         }
     }
+    console.log("hello")
     let js = false
     onMount(() => {
         js = true
+        console.log(js)
         onPostAdded(postAddCB)
         return () => {
             $session?.destroy()
@@ -38,6 +41,7 @@
         }
     })
     $: (async () => {
+        console.log(session)
         await (await get(session)?.setCookies($cookieStore))?.loadUserData()
     })()
     export let form

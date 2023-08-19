@@ -51,6 +51,7 @@ export function signup(name: string, email: string, password: string): Promise<S
             id: user.id
         }
         } catch(error) {
+            console.log(error)
             if(error instanceof DatabaseError) {
                 const [_, field, constraint] = error.constraint?.split('_') ?? ["", "", ""]
                 if(field === "name" && constraint === "unique") return {
