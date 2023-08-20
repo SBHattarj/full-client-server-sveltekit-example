@@ -1,4 +1,4 @@
-import type { Actions } from "./$types";
+import type { Actions, PageServerLoad } from "./$types";
 import { checkUser } from "$lib/auth/user";
 import { redirect, fail } from "@sveltejs/kit";
 export const actions: Actions = {

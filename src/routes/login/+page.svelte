@@ -2,6 +2,8 @@
     import { slide } from 'svelte/transition';
     import { enhance } from '$app/forms';
     import { userExists, userEmailMatch } from "$lib/user/User";
+    import { browser } from '$app/environment';
+    import { RestWebSocket } from "$lib/ws-rest"
 
     export let form
     let name = ''

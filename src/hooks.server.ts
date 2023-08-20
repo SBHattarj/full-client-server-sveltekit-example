@@ -1,10 +1,14 @@
-import handleWS from "$lib/ws"
+import WS from "$lib/ws"
+import { RestWebSocketServer } from "$lib/ws-rest/server";
 import type { Handle } from "@sveltejs/kit";
+
 let unprotectedPaths = new Set(["/login", "/signup"]);
-export const handleWs = handleWS((wsEvents) => {
-});
+
+WS(() => {
+})(new RestWebSocketServer())
 
 export const handle: Handle = async({ event, resolve }) => {
+    if(event.url.pathname == "/ws") return await resolve(event)
     let isUnprotectedPath = unprotectedPaths.has(event.url.pathname);
 
     if(
