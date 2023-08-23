@@ -8,7 +8,9 @@ export default defineConfig({
 	plugins: [
         sveltekit(),
         WebSockets(),
-        serverBrowserSync(),
+        serverBrowserSync({
+            connectionTimeout: 10 * 1000,
+        }),
         cjsInterop({
             dependencies: [
                 "pg"
@@ -26,5 +28,8 @@ export default defineConfig({
             include: [/node_modules/]
         },
         target: 'esnext'
+    },
+    define: {
+        "globalThis.__internal_full_client_server_timeout__": 10 * 1000
     }
 });
